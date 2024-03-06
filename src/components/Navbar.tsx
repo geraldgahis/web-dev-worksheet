@@ -3,27 +3,24 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 
-// interface navItems {
-//     title: string,
-//     path: string,
-// }
-
 const Navbar = () => {
     const [state, setState] = useState(false);
     const pathName = usePathname();
     const navigation = [
         { title: 'Task', path: '/' },
         { title: 'Task', path: '/task-2' },
-        { title: 'Task', path: '/task2' },
-        { title: 'Task', path: '/task2' },
-        { title: 'Task', path: '/task2' },
-        { title: 'Task', path: '/task2' },
+        { title: 'Task', path: '/task-3' },
+        { title: 'Task', path: '/task-4' },
+        { title: 'Task', path: '/task-5' },
+        { title: 'Task', path: '/task-6' },
     ];
     return (
         <nav className="bg-white border-b md:text-sm md:border-none shadow fixed w-full z-20 top-0 start-0">
             <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                    <Link href="#">Logo</Link>
+                    <Link href="/" className="text-xl">
+                        Web Developer Worksheet
+                    </Link>
                     <div className="md:hidden">
                         <button
                             className="text-gray-500 hover:text-gray-800"
@@ -66,14 +63,14 @@ const Navbar = () => {
                         state ? 'block' : 'hidden'
                     }`}
                 >
-                    <ul className="justify-end items-center space-y-4 md:flex md:space-x-6 md:space-y-0">
+                    <ul className="justify-end items-center space-y-2 md:flex md:space-x-6 md:space-y-0">
                         {navigation.map((item, idx) => {
                             return (
                                 <li
                                     key={idx}
-                                    className={` hover:text-indigo-600 font-semibold md:border-b-4   md:py-5 md:px-2 py-0 px-0 ${
+                                    className={`block py-2 px-3  rounded md:bg-transparent text-gray-900 md:p-0 ${
                                         pathName === item.path
-                                            ? 'text-indigo-600 md:border-blue-600'
+                                            ? 'md:text-blue-700 bg-blue-700 text-white'
                                             : 'text-gray-700 md:border-transparent'
                                     }`}
                                 >
