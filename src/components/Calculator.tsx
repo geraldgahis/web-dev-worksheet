@@ -12,24 +12,24 @@ const initialCalculatorState: ICalculator = {
 };
 
 const Calculator = () => {
-    const [state, setState] = useState<ICalculator>(initialCalculatorState);
+    const [input, setInput] = useState<ICalculator>(initialCalculatorState);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         const parsedValue = parseInt(value, 10);
 
         if (isNaN(parsedValue)) return;
 
-        setState({
-            ...state,
+        setInput({
+            ...input,
             [name]: parsedValue,
         });
     };
 
     const handleReset = () => {
-        setState(initialCalculatorState);
+        setInput(initialCalculatorState);
     };
 
-    const sum = state.firstNumber + state.secondNumber;
+    const sum = input.firstNumber + input.secondNumber;
 
     return (
         <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
@@ -48,7 +48,7 @@ const Calculator = () => {
                         type="number"
                         name="firstNumber"
                         id="firstNumber"
-                        value={state.firstNumber || 0}
+                        value={input.firstNumber || 0}
                         onChange={handleChange}
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
                     />
@@ -63,7 +63,7 @@ const Calculator = () => {
                     <input
                         type="number"
                         name="secondNumber"
-                        value={state.secondNumber || 0}
+                        value={input.secondNumber || 0}
                         onChange={handleChange}
                         id="secondNumber"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"

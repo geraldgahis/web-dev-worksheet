@@ -6,7 +6,7 @@ const TextGrow = () => {
     const [color, setColor] = useState('#eeeeee');
 
     const handleClick = () => {
-        setSize(size + 8);
+        setSize(size * 2);
         setColor(
             () =>
                 '#' +

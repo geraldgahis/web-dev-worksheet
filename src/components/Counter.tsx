@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 const Counter = () => {
     const [count, setCount] = useState(0);
 
-    const increment = () => setCount(count + 1);
-    const decrement = () => setCount(count - 1);
+    const increment = () => setCount((prev) => prev + 1);
+    const decrement = () => setCount((prev) => prev - 1);
     const resetCounter = () => setCount(0);
 
     const is_even = count % 2 === 0;
