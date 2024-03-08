@@ -1,14 +1,12 @@
-import Card from '@/components/Card';
+import CardList from '@/components/CardList';
 import React from 'react';
 
-const CardPage = () => {
+export default async function CardPage() {
     return (
         <>
-            <section className="h-full flex justify-center items-center max-w-7xl mx-auto my-24">
-                <Card />
+            <section className="h-full max-w-7xl mx-auto my-24">
+                <CardList />
             </section>
         </>
     );
-};
-
-export default CardPage;
+}
